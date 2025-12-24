@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alexandra Morgan | Actor & Writer</title>
+    <title>Constantin Alexeevici | Actor & Performer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -186,6 +186,7 @@
             justify-content: center;
             overflow: hidden;
             margin-top: 70px;
+            background: #1a1a1a;
         }
         
         .hero-image {
@@ -344,12 +345,14 @@
             overflow: hidden;
             aspect-ratio: 3/4;
             cursor: pointer;
+            background: #f8f8f8;
         }
         
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center center;
             filter: grayscale(100%) contrast(1.05);
             transition: all 0.5s ease;
         }
@@ -639,14 +642,25 @@
         }
         
         /* ===== ICONS (Using Unicode) ===== */
+        
+        /* Form message styling */
+        #formMessage {
+            font-size: 0.95rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
 
     </style>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- EmailJS Configuration (gitignored) -->
+    <script type="text/javascript" src="config.js"></script>
 </head>
 <body>
     <!-- NAVIGATION -->
     <nav class="navigation">
         <div class="nav-container">
-            <div class="logo">ALEXANDRA MORGAN</div>
+            <div class="logo">CONSTANTIN ALEXEEVICI</div>
             <div class="menu-toggle" onclick="toggleMenu()">
                 <span></span>
                 <span></span>
@@ -686,11 +700,11 @@
 
     <!-- HERO SECTION -->
     <section class="hero" id="home">
-        <img src="costi.jpg" alt="Constantin" class="hero-image">
+        <img src="public/costi.jpg" alt="Constantin" class="hero-image">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-name">ALEXANDRA MORGAN</h1>
-            <p class="hero-subtitle">Actor & Writer</p>
+            <h1 class="hero-name">CONSTANTIN ALEXEEVICI</h1>
+            <p class="hero-subtitle">Actor & Performer</p>
         </div>
         <div class="social-links">
             <a href="#" class="icon-instagram" aria-label="Instagram"></a>
@@ -704,15 +718,15 @@
         <div class="container">
             <h2 class="section-title">About</h2>
             <div class="about-content">
-                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&q=80" alt="Alexandra Morgan Portrait" class="about-image">
+                <img src="public/costi.jpg" alt="Constantin Alexeevici Portrait" class="about-image">
                 <div class="about-text">
-                    <p>Alexandra Morgan is an award-winning actor and writer based in New York City. With over a decade of experience across film, television, and theater, she brings depth and authenticity to every role.</p>
+                    <p>Student of Acting at the National University of Theatre and Film "I.L. Caragiale" in Bucharest (Year IV), trained in the rigorous academic spirit of the actor's art.</p>
                     
-                    <p>Trained at the Royal Academy of Dramatic Art in London, Alexandra has performed on stages from Broadway to the West End. Her film work has premiered at Sundance, Cannes, and Toronto International Film Festival.</p>
+                    <p>An actor with broad expressive availability, with experience in classical theater, performance, and student film productions. He maintains a constant interest in complex artistic projects that combine stage performance with music and physical performance.</p>
                     
-                    <p>Beyond acting, Alexandra is a passionate writer whose screenplays have been recognized at numerous festivals. She is committed to telling stories that challenge perspectives and illuminate the human experience.</p>
+                    <p>With skills in percussion (African djembe, Egyptian doumbek), wind instruments (didgeridoo, Armenian duduk), classical and psaltic singing (bass-baritone), pole dance, acrobatics, circus arts, and clowning, Constantin brings a unique versatility to every role.</p>
                     
-                    <p>When not on set or stage, she mentors emerging actors and advocates for greater representation in the entertainment industry.</p>
+                    <p>Based in Bucharest, he is committed to exploring the boundaries of performance art and bringing authenticity to both stage and screen.</p>
                 </div>
             </div>
         </div>
@@ -734,22 +748,22 @@
             <h2 class="section-title">Gallery</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="gallery1.jpg" alt="Gallery Image 1">
+                    <img src="public/gallery1.jpg" alt="Gallery Image 1">
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery2.jpg" alt="Gallery Image 2">
+                    <img src="public/gallery2.jpg" alt="Gallery Image 2">
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery3.jpg" alt="Gallery Image 3">
+                    <img src="public/gallery3.jpg" alt="Gallery Image 3">
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery4.jpg" alt="Gallery Image 4">
+                    <img src="public/gallery4.jpg" alt="Gallery Image 4">
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery5.jpg" alt="Gallery Image 5">
+                    <img src="public/gallery5.jpg" alt="Gallery Image 5">
                 </div>
                 <div class="gallery-item">
-                    <img src="gallery6.jpg" alt="Gallery Image 6">
+                    <img src="public/gallery6.jpg" alt="Gallery Image 6">
                 </div>
             </div>
         </div>
@@ -762,51 +776,27 @@
             <div class="credits-list">
                 <div class="credit-item">
                     <div>
-                        <div class="credit-title">The Last Symphony</div>
-                        <div class="credit-role">Lead Role - Elena Rostova</div>
+                        <div class="credit-title">The Magic Potion</div>
+                        <div class="credit-role">Actor (Commedia dell'arte)</div>
                     </div>
-                    <div class="credit-role">Feature Film</div>
-                    <div class="credit-year">2024</div>
+                    <div class="credit-role">Comedy Theatre Bucharest</div>
+                    <div class="credit-year">2025</div>
                 </div>
                 <div class="credit-item">
                     <div>
-                        <div class="credit-title">Echoes of Tomorrow</div>
-                        <div class="credit-role">Series Regular - Dr. Sarah Chen</div>
+                        <div class="credit-title">Green Vibration</div>
+                        <div class="credit-role">Performer, Living Statue</div>
                     </div>
-                    <div class="credit-role">HBO Series</div>
-                    <div class="credit-year">2023-2024</div>
-                </div>
-                <div class="credit-item">
-                    <div>
-                        <div class="credit-title">A Streetcar Named Desire</div>
-                        <div class="credit-role">Blanche DuBois</div>
-                    </div>
-                    <div class="credit-role">Broadway</div>
+                    <div class="credit-role">Street Parade / Urban Event</div>
                     <div class="credit-year">2023</div>
                 </div>
                 <div class="credit-item">
                     <div>
-                        <div class="credit-title">Winter's Edge</div>
-                        <div class="credit-role">Supporting Role - Margaret</div>
+                        <div class="credit-title">Student Short Films</div>
+                        <div class="credit-role">Leading and Supporting Roles</div>
                     </div>
-                    <div class="credit-role">Feature Film</div>
-                    <div class="credit-year">2022</div>
-                </div>
-                <div class="credit-item">
-                    <div>
-                        <div class="credit-title">The Merchant of Venice</div>
-                        <div class="credit-role">Portia</div>
-                    </div>
-                    <div class="credit-role">West End</div>
-                    <div class="credit-year">2021</div>
-                </div>
-                <div class="credit-item">
-                    <div>
-                        <div class="credit-title">Midnight in Manhattan</div>
-                        <div class="credit-role">Lead Role - Anna Wells</div>
-                    </div>
-                    <div class="credit-role">Independent Film</div>
-                    <div class="credit-year">2020</div>
+                    <div class="credit-role">UNATC "I.L. Caragiale"</div>
+                    <div class="credit-year">2022–present</div>
                 </div>
             </div>
         </div>
@@ -818,19 +808,19 @@
             <h2 class="section-title">Latest News</h2>
             <div class="news-grid">
                 <div class="news-item">
-                    <div class="news-date">December 2024</div>
-                    <h3 class="news-title">Nominated for Best Actress</h3>
-                    <p class="news-excerpt">Alexandra Morgan receives critical acclaim and a Screen Actors Guild nomination for her powerful performance in "The Last Symphony."</p>
+                    <div class="news-date">2025</div>
+                    <h3 class="news-title">The Magic Potion</h3>
+                    <p class="news-excerpt">Currently working on "The Magic Potion" in partnership with Comedy Theatre Bucharest, a Commedia dell'arte production directed by Ioana Rufu.</p>
                 </div>
                 <div class="news-item">
-                    <div class="news-date">November 2024</div>
-                    <h3 class="news-title">New Series Announcement</h3>
-                    <p class="news-excerpt">"Thrilled to announce I'll be joining the cast of the upcoming Netflix limited series 'Shadows and Light' premiering Spring 2025."</p>
+                    <div class="news-date">2023</div>
+                    <h3 class="news-title">Green Vibration Performance</h3>
+                    <p class="news-excerpt">Participated as a performer and living statue in "Green Vibration", an urban street parade event, showcasing physical performance and direct interaction with the public.</p>
                 </div>
                 <div class="news-item">
-                    <div class="news-date">October 2024</div>
-                    <h3 class="news-title">Variety Feature</h3>
-                    <p class="news-excerpt">In-depth interview with Variety discussing the craft of acting, upcoming projects, and the importance of authentic storytelling.</p>
+                    <div class="news-date">2022–present</div>
+                    <h3 class="news-title">UNATC Student Projects</h3>
+                    <p class="news-excerpt">Actively participating in student short films at UNATC "I.L. Caragiale" Bucharest, taking on leading and supporting roles in directing and cinematography exam projects.</p>
                 </div>
             </div>
         </div>
@@ -842,34 +832,28 @@
             <h2 class="section-title">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Representation</h3>
+                    <h3>Contact</h3>
                     <div class="contact-detail">
-                        <div class="contact-label">Theatrical Agent</div>
+                        <div class="contact-label">Location</div>
                         <div class="contact-value">
-                            Sarah Mitchell<br>
-                            Creative Artists Agency<br>
-                            <a href="mailto:s.mitchell@caa.com">s.mitchell@caa.com</a>
+                            Bucharest, Romania
                         </div>
                     </div>
                     <div class="contact-detail">
-                        <div class="contact-label">Manager</div>
+                        <div class="contact-label">Phone</div>
                         <div class="contact-value">
-                            David Thompson<br>
-                            Brillstein Entertainment<br>
-                            <a href="mailto:d.thompson@brillstein.com">d.thompson@brillstein.com</a>
+                            <a href="tel:+40763241412">0763 241 412</a>
                         </div>
                     </div>
                     <div class="contact-detail">
-                        <div class="contact-label">Publicist</div>
+                        <div class="contact-label">Email</div>
                         <div class="contact-value">
-                            Jennifer Lee<br>
-                            PMK-BNC<br>
-                            <a href="mailto:j.lee@pmkbnc.com">j.lee@pmkbnc.com</a>
+                            <a href="mailto:costistochita70@gmail.com">costistochita70@gmail.com</a>
                         </div>
                     </div>
                 </div>
                 
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm">
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" required>
@@ -886,7 +870,8 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn">Send Message</button>
+                    <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                    <div id="formMessage" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 4px;"></div>
                 </form>
             </div>
         </div>
@@ -900,7 +885,7 @@
                 <a href="#" class="icon-twitter" aria-label="Twitter"></a>
                 <a href="#" class="icon-facebook" aria-label="Facebook"></a>
             </div>
-            <p class="copyright">© 2024 Alexandra Morgan. All Rights Reserved.</p>
+            <p class="copyright">© 2024 Constantin Alexeevici. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -919,11 +904,99 @@
             });
         });
         
-        // Form submission (placeholder - no backend)
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! This is a demo form with no backend. In production, this would send your message.');
-            this.reset();
+        // EmailJS Configuration
+        // To set up EmailJS:
+        // 1. Go to https://www.emailjs.com/ and create a free account
+        // 2. Create an email service (Gmail, Outlook, etc.)
+        // 3. Create an email template
+        // 4. Get your Public Key, Service ID, and Template ID
+        // 5. Replace the values below with your own credentials
+        
+        // Initialize EmailJS and form handler when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if config is loaded
+            if (typeof EMAILJS_CONFIG === 'undefined') {
+                console.error('EmailJS configuration not found. Please ensure config.js exists and contains your credentials.');
+                const formMessage = document.getElementById('formMessage');
+                if (formMessage) {
+                    formMessage.style.display = 'block';
+                    formMessage.style.backgroundColor = '#fff3cd';
+                    formMessage.style.color = '#856404';
+                    formMessage.style.border = '1px solid #ffeaa7';
+                    formMessage.textContent = 'Configuration error. Please contact the site administrator.';
+                }
+                return;
+            }
+            
+            // Initialize EmailJS
+            if (typeof emailjs !== 'undefined') {
+                emailjs.init(EMAILJS_CONFIG.PUBLIC_KEY);
+            }
+            
+            // Form submission handler
+            const contactForm = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Check if EmailJS is available
+                    if (typeof emailjs === 'undefined') {
+                        formMessage.style.display = 'block';
+                        formMessage.style.backgroundColor = '#f8d7da';
+                        formMessage.style.color = '#721c24';
+                        formMessage.style.border = '1px solid #f5c6cb';
+                        formMessage.textContent = 'Email service is not available. Please email directly at ' + EMAILJS_CONFIG.TO_EMAIL;
+                        return;
+                    }
+                    
+                    // Disable submit button and show loading state
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+                    formMessage.style.display = 'none';
+                    
+                    // Prepare email parameters
+                    const templateParams = {
+                        from_name: document.getElementById('name').value,
+                        from_email: document.getElementById('email').value,
+                        subject: document.getElementById('subject').value,
+                        message: document.getElementById('message').value,
+                        to_email: EMAILJS_CONFIG.TO_EMAIL
+                    };
+                   
+                    // Send email using EmailJS
+                    emailjs.send(EMAILJS_CONFIG.SERVICE_ID, EMAILJS_CONFIG.TEMPLATE_ID, templateParams)
+                        .then(function(response) {
+                            // Success
+                            formMessage.style.display = 'block';
+                            formMessage.style.backgroundColor = '#d4edda';
+                            formMessage.style.color = '#155724';
+                            formMessage.style.border = '1px solid #c3e6cb';
+                            formMessage.textContent = 'Thank you for your message! I will get back to you soon.';
+                            contactForm.reset();
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+                            
+                            // Hide message after 5 seconds
+                            setTimeout(function() {
+                                formMessage.style.display = 'none';
+                            }, 5000);
+                        }, function(error) {
+                            // Error
+                            formMessage.style.display = 'block';
+                            formMessage.style.backgroundColor = '#f8d7da';
+                            formMessage.style.color = '#721c24';
+                            formMessage.style.border = '1px solid #f5c6cb';
+                            formMessage.textContent = 'Sorry, there was an error sending your message. Please try again or email me directly at ' + EMAILJS_CONFIG.TO_EMAIL;
+                            submitBtn.disabled = false;
+                            submitBtn.textContent = 'Send Message';
+                            
+                            console.error('EmailJS Error:', error);
+                        });
+                });
+            }
         });
     </script>
 </body>
